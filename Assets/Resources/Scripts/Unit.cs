@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour
     public float range, attSpeed;
     public float speed = 1.0F;
     public GameObject target;
+    public bool deathTimer = false;
     public bool isMoving = false;
     public Animation anim;
 
@@ -35,46 +36,87 @@ public class Unit : MonoBehaviour
     {
         if (this.GetComponent<Stats>().health <= 0)
         {
-            Destroy(gameObject);
-        }
-
-        
-
-        if (target != null)
-        {
-            isMoving = true;
-            anim.CrossFade("Walk");
-
-            if (tarPos != target.transform.position)
+            if (!deathTimer)
             {
-                tarPos = target.transform.position;
+                if (isMoving)
+                    anim.CrossFade("Move Die");
+                else
+                    anim.CrossFade("Stand Die");
 
-                t = Time.time;
-                pos = this.transform.position;
+                deathTimer = true;
+            }
+            else
+            {
+                if (!anim.IsPlaying("Move Die") && !anim.IsPlaying("Stand Die"))
+                {
+                     Destroy(gameObject);
+                }
             }
 
-            if (Vector3.Distance(transform.position, tarPos) <= range)
+        }
+        else
+        {
+
+
+
+            if (target != null)
             {
-                tarPos = transform.position;
+                isMoving = true;
+                anim.CrossFade("Walk");
 
-                anim.CrossFade("Attack");
-
-                if (Time.time - attT >= attSpeed)
+                if (tarPos != target.transform.position)
                 {
-                    
-                    attT = Time.time;
-                    target.GetComponent<Stats>().health -= dmg;
-                    
-                    if (gameObject.GetComponent<Stats>().type == 1 && target.GetComponent<Stats>().faction == 2)
+                    tarPos = target.transform.position;
+
+                    t = Time.time;
+                    pos = this.transform.position;
+                }
+
+                if (Vector3.Distance(transform.position, tarPos) <= range)
+                {
+                    tarPos = transform.position;
+                    isMoving = false;
+                    anim.CrossFade("Attack");
+
+                    if (Time.time - attT >= attSpeed)
                     {
-                        target.GetComponent<Stats>().health -= (dmg*4);
-                        Camera.main.GetComponent<PlayerScript>().eggs += (dmg * 5);
+
+                        attT = Time.time;
+                        target.GetComponent<Stats>().health -= dmg;
+
+                        if (gameObject.GetComponent<Stats>().type == 1 && target.GetComponent<Stats>().faction == 2)
+                        {
+                            target.GetComponent<Stats>().health -= (dmg * 4);
+                            Camera.main.GetComponent<PlayerScript>().eggs += (dmg * 5);
+                        }
+                    }
+                }
+                else
+                {
+
+                    // Distance moved = time * speed.
+                    float distCovered = (Time.time - t) * speed;
+
+                    // Fraction of journey completed = current distance divided by total distance.
+                    float fracJourney = distCovered / Vector3.Distance(pos, tarPos);
+
+                    // Set our position as a fraction of the distance between the markers.
+                    if (this.transform.position != tarPos)
+                    {
+                        oldPos = this.transform.position;
+                        this.transform.position = Vector3.Lerp(pos, tarPos, fracJourney);
+                        //this.transform.Translate(this.transform.position);
+                    }
+                    else
+                    {
+                        pos = tarPos;
                     }
                 }
             }
             else
             {
-
+                isMoving = false;
+                anim.CrossFade("Idle");
                 // Distance moved = time * speed.
                 float distCovered = (Time.time - t) * speed;
 
@@ -84,6 +126,8 @@ public class Unit : MonoBehaviour
                 // Set our position as a fraction of the distance between the markers.
                 if (this.transform.position != tarPos)
                 {
+                    isMoving = true;
+                    anim.CrossFade("Walk");
                     oldPos = this.transform.position;
                     this.transform.position = Vector3.Lerp(pos, tarPos, fracJourney);
                     //this.transform.Translate(this.transform.position);
@@ -92,35 +136,10 @@ public class Unit : MonoBehaviour
                 {
                     pos = tarPos;
                 }
+
             }
+
         }
-        else
-        {
-            isMoving = true;
-            anim.CrossFade("Idle");
-            // Distance moved = time * speed.
-            float distCovered = (Time.time - t) * speed;
-
-            // Fraction of journey completed = current distance divided by total distance.
-            float fracJourney = distCovered / Vector3.Distance(pos, tarPos);
-
-            // Set our position as a fraction of the distance between the markers.
-            if (this.transform.position != tarPos)
-            {
-                isMoving = true;
-                anim.CrossFade("Walk");
-                oldPos = this.transform.position;
-                this.transform.position = Vector3.Lerp(pos, tarPos, fracJourney);
-                //this.transform.Translate(this.transform.position);
-            }
-            else
-            {
-                pos = tarPos;
-            }
-            
-        }
-
-
     }
 
     void OnMouseDown() {

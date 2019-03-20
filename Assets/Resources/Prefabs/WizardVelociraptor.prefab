@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 8749785391034341845}
   m_Layer: 0
   m_Name: WizardVelociraptor
-  m_TagString: Untagged
+  m_TagString: None
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ Animation:
   m_GameObject: {fileID: 5791401361422182010}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
+  m_Animation: {fileID: 7400010, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
@@ -277,7 +277,7 @@ Animation:
   - {fileID: 7400012, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400014, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
 --- !u!114 &5068205623327893499
@@ -299,6 +299,7 @@ MonoBehaviour:
   mana: 100
   manaMax: 100
   cost: 60
+  type: 0
 --- !u!114 &9000473937666860223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,13 +316,14 @@ MonoBehaviour:
   oldPos: {x: 0, y: 0, z: 0}
   tarPos: {x: 0, y: 0, z: 0}
   dmg: 6
-  type: 0
   t: 0
   attT: 0
   range: 10
   attSpeed: 4
   speed: 1
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!136 &1554776113989412978
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &5791401361572234729
 GameObject:
@@ -1003,18 +1005,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: eebc1396afa4a324fb587601ea133688, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: eebc1396afa4a324fb587601ea133688, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: eebc1396afa4a324fb587601ea133688, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: eebc1396afa4a324fb587601ea133688, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebc1396afa4a324fb587601ea133688, type: 3}

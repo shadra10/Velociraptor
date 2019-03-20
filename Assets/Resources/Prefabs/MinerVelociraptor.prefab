@@ -76,9 +76,12 @@ GameObject:
   - component: {fileID: 1180575159932934150}
   - component: {fileID: 5654546892474718597}
   - component: {fileID: 1102532170148008063}
+  - component: {fileID: 1234894227}
+  - component: {fileID: 1234894228}
+  - component: {fileID: 1234894229}
   m_Layer: 0
   m_Name: MinerVelociraptor
-  m_TagString: Untagged
+  m_TagString: None
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +111,7 @@ Animation:
   m_GameObject: {fileID: 8010383911687617164}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
+  m_Animation: {fileID: 7400010, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
@@ -119,7 +122,7 @@ Animation:
   - {fileID: 7400012, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400014, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
 --- !u!136 &9203494236594213563
@@ -158,6 +161,8 @@ MonoBehaviour:
   attSpeed: 1
   speed: 2
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!114 &5654546892474718597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +199,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &1234894227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010383911687617164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b99b3f8cf90545883868780df6dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1234894228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010383911687617164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa08ef5bba469f4f95e2beee9427921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1234894229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010383911687617164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ad0cfc2e94e7546b859d4d180b1ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8010383911696959544
 GameObject:
   m_ObjectHideFlags: 0

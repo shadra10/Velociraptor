@@ -124,11 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinerVelociraptor
       objectReference: {fileID: 0}
-    - target: {fileID: 8010383911687617164, guid: ee15ddf6d1c99a04f9a5af6a41d706be,
-        type: 3}
-      propertyPath: m_TagString
-      value: None
-      objectReference: {fileID: 0}
     - target: {fileID: 8010383911687617165, guid: ee15ddf6d1c99a04f9a5af6a41d706be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,11 +262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpitterVelociraptor
       objectReference: {fileID: 0}
-    - target: {fileID: 3535935273775775443, guid: 10be166d7a9620e4681f72dde892529e,
-        type: 3}
-      propertyPath: m_TagString
-      value: None
-      objectReference: {fileID: 0}
     - target: {fileID: 3535935273775775442, guid: 10be166d7a9620e4681f72dde892529e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -327,11 +317,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6173171355671728654, guid: 10be166d7a9620e4681f72dde892529e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10be166d7a9620e4681f72dde892529e, type: 3}
 --- !u!1 &416382674
@@ -364,37 +349,6 @@ Transform:
   m_Father: {fileID: 1480922377}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &845505182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1476247141433102929, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
-    type: 3}
-  m_PrefabInstance: {fileID: 891302008}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &845505183
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845505182}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a3b42897c8469f4d8a594581440e508, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &845505188 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 1476247141433102931, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
-    type: 3}
-  m_PrefabInstance: {fileID: 891302008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &891302008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,11 +360,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WarriorVelociraptor
-      objectReference: {fileID: 0}
-    - target: {fileID: 1476247141433102929, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
-        type: 3}
-      propertyPath: m_TagString
-      value: None
       objectReference: {fileID: 0}
     - target: {fileID: 1476247141433102928, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
         type: 3}
@@ -467,21 +416,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1476247141433102931, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1476247141433102931, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
-        type: 3}
-      propertyPath: m_PlayAutomatically
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841051912822972180, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 845505188}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4e89cf9eaeb0f42942fec360ffe60a, type: 3}
 --- !u!1001 &926672278
@@ -495,11 +429,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NecroKnight
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391331234401252173, guid: a1aa0a25cc435c742954d4e10bf44baa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
       objectReference: {fileID: 0}
     - target: {fileID: 2391331234401742637, guid: a1aa0a25cc435c742954d4e10bf44baa,
         type: 3}
@@ -558,70 +487,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1aa0a25cc435c742954d4e10bf44baa, type: 3}
---- !u!1 &926672279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2391331234401252173, guid: a1aa0a25cc435c742954d4e10bf44baa,
-    type: 3}
-  m_PrefabInstance: {fileID: 926672278}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &926672280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926672279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 0
-  t: 0
-  attT: 0
-  range: 0
-  attSpeed: 0
-  speed: 1
-  target: {fileID: 0}
-  isMoving: 0
-  anim: {fileID: 0}
---- !u!136 &926672281
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926672279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &926672282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926672279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 45
-  maxHealth: 45
-  faction: 1
-  abilities: 0
-  mana: 0
-  manaMax: 0
-  cost: 0
-  type: 0
 --- !u!1001 &957109609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -793,48 +658,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83cdb3143d42ec242a1f7cf0fab1308a, type: 3}
---- !u!1 &1234894226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8010383911687617164, guid: ee15ddf6d1c99a04f9a5af6a41d706be,
-    type: 3}
-  m_PrefabInstance: {fileID: 45754535}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1234894227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234894226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53b99b3f8cf90545883868780df6dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1234894228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234894226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa08ef5bba469f4f95e2beee9427921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1234894229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234894226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ad0cfc2e94e7546b859d4d180b1ad9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1268738859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -961,11 +784,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
-    - target: {fileID: 6836373760477460013, guid: feabffbb3ef182a4292ed534bca72f43,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 6836373760477030989, guid: feabffbb3ef182a4292ed534bca72f43,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1023,70 +841,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feabffbb3ef182a4292ed534bca72f43, type: 3}
---- !u!1 &1402117490 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6836373760477460013, guid: feabffbb3ef182a4292ed534bca72f43,
-    type: 3}
-  m_PrefabInstance: {fileID: 1402117489}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1402117491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402117490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 0
-  t: 0
-  attT: 0
-  range: 0
-  attSpeed: 0
-  speed: 1
-  target: {fileID: 0}
-  isMoving: 0
-  anim: {fileID: 0}
---- !u!136 &1402117492
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402117490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &1402117493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402117490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 60
-  maxHealth: 60
-  faction: 1
-  abilities: 0
-  mana: 0
-  manaMax: 0
-  cost: 0
-  type: 0
 --- !u!1 &1480922372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,11 +1166,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WizardVelociraptor
       objectReference: {fileID: 0}
-    - target: {fileID: 5791401361422182010, guid: 8350135d4a0ded14f8b959cddce940f9,
-        type: 3}
-      propertyPath: m_TagString
-      value: None
-      objectReference: {fileID: 0}
     - target: {fileID: 5791401361422182011, guid: 8350135d4a0ded14f8b959cddce940f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1471,11 +1220,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749785391034341845, guid: 8350135d4a0ded14f8b959cddce940f9,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8350135d4a0ded14f8b959cddce940f9, type: 3}
@@ -1558,11 +1302,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NecroSpitter
       objectReference: {fileID: 0}
-    - target: {fileID: 4258687838178125212, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 4258687838178125213, guid: 9c9e7a4e22742944b834dd7e0074136e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1618,77 +1357,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6890594050469103937, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9e7a4e22742944b834dd7e0074136e, type: 3}
---- !u!1 &2087690686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4258687838178125212, guid: 9c9e7a4e22742944b834dd7e0074136e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2087690685}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2087690687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087690686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 5
-  t: 0
-  attT: 0
-  range: 20
-  attSpeed: 2
-  speed: 2
-  target: {fileID: 0}
-  isMoving: 0
-  anim: {fileID: 0}
---- !u!136 &2087690688
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087690686}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &2087690689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087690686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 30
-  maxHealth: 30
-  faction: 1
-  abilities: 0
-  mana: 0
-  manaMax: 0
-  cost: 0
-  type: 0
 --- !u!1 &2102198644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,11 +1638,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 7066415308516826622, guid: c9e36b2ba4a5d0547ac804532b17b468,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2030,70 +1695,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e36b2ba4a5d0547ac804532b17b468, type: 3}
---- !u!1 &4869202714374062567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7066415308516826622, guid: c9e36b2ba4a5d0547ac804532b17b468,
-    type: 3}
-  m_PrefabInstance: {fileID: 4869202714374062566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4869202714374062568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869202714374062567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 0
-  t: 0
-  attT: 0
-  range: 0
-  attSpeed: 0
-  speed: 1
-  target: {fileID: 0}
-  isMoving: 0
-  anim: {fileID: 0}
---- !u!136 &4869202714374062569
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869202714374062567}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &4869202714374062570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869202714374062567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 40
-  maxHealth: 40
-  faction: 1
-  abilities: 0
-  mana: 0
-  manaMax: 0
-  cost: 0
-  type: 0
 --- !u!1001 &5681410584636181361
 PrefabInstance:
   m_ObjectHideFlags: 0

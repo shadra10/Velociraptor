@@ -115,9 +115,12 @@ GameObject:
   - component: {fileID: 6836373760477030989}
   - component: {fileID: 6836373760487436191}
   - component: {fileID: 6148477172431983663}
+  - component: {fileID: 1402117492}
+  - component: {fileID: 1402117491}
+  - component: {fileID: 1402117493}
   m_Layer: 0
   m_Name: Necromancer
-  m_TagString: Untagged
+  m_TagString: Foe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +152,7 @@ Animation:
   m_GameObject: {fileID: 6836373760477460013}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
+  m_Animation: {fileID: 7400010, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
@@ -160,7 +163,7 @@ Animation:
   - {fileID: 7400012, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400014, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
 --- !u!54 &6148477172431983663
@@ -179,6 +182,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!136 &1402117492
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.5, z: -0.2}
+--- !u!114 &1402117491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  oldPos: {x: 0, y: 0, z: 0}
+  tarPos: {x: 0, y: 0, z: 0}
+  dmg: 0
+  t: 0
+  attT: 0
+  range: 0
+  attSpeed: 0
+  speed: 1
+  target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
+--- !u!114 &1402117493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 60
+  maxHealth: 60
+  faction: 1
+  abilities: 0
+  mana: 0
+  manaMax: 0
+  cost: 0
+  type: 0
 --- !u!1 &6836373760477460015
 GameObject:
   m_ObjectHideFlags: 0

@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 979768691138693281}
   m_Layer: 0
   m_Name: SpitterVelociraptor
-  m_TagString: Untagged
+  m_TagString: None
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,7 +294,7 @@ Animation:
   m_GameObject: {fileID: 3535935273775775443}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
+  m_Animation: {fileID: 7400010, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
@@ -305,7 +305,7 @@ Animation:
   - {fileID: 7400012, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400014, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
 --- !u!136 &2025606949939176418
@@ -338,13 +338,14 @@ MonoBehaviour:
   oldPos: {x: 0, y: 0, z: 0}
   tarPos: {x: 0, y: 0, z: 0}
   dmg: 5
-  type: 0
   t: 0
   attT: 0
   range: 5
   attSpeed: 2
   speed: 2
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!114 &6492096269978720413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +365,7 @@ MonoBehaviour:
   mana: 0
   manaMax: 0
   cost: 40
+  type: 0
 --- !u!54 &979768691138693281
 Rigidbody:
   m_ObjectHideFlags: 0
