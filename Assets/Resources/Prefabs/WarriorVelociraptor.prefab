@@ -266,7 +266,7 @@ Animation:
   m_GameObject: {fileID: 1476247141433102929}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
+  m_Animation: {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
   - {fileID: 7400002, guid: e0695f0b04d7b734ea6ec11026bf22ed, type: 3}
@@ -310,13 +310,14 @@ MonoBehaviour:
   oldPos: {x: 0, y: 0, z: 0}
   tarPos: {x: 0, y: 0, z: 0}
   dmg: 5
-  type: 0
   t: 0
   attT: 0
   range: 2
   attSpeed: 2
   speed: 2
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!114 &7549438054234759702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +337,7 @@ MonoBehaviour:
   mana: 0
   manaMax: 0
   cost: 45
+  type: 0
 --- !u!54 &737365149934127754
 Rigidbody:
   m_ObjectHideFlags: 0

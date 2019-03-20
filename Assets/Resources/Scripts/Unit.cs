@@ -13,6 +13,8 @@ public class Unit : MonoBehaviour
     public float range, attSpeed;
     public float speed = 1.0F;
     public GameObject target;
+    public bool isMoving = false;
+    public Animation anim;
 
     void Start()
     {
@@ -20,6 +22,12 @@ public class Unit : MonoBehaviour
         t = Time.time;
 
         this.GetComponent<Stats>().health = this.GetComponent<Stats>().maxHealth;
+
+        anim = GetComponent<Animation>();
+        foreach (AnimationState state in anim)
+        {
+            state.speed = 0.5F;
+        }
     }
 
     // Update is called once per frame
@@ -30,8 +38,13 @@ public class Unit : MonoBehaviour
             Destroy(gameObject);
         }
 
+        
+
         if (target != null)
         {
+            isMoving = true;
+            anim.CrossFade("Walk");
+
             if (tarPos != target.transform.position)
             {
                 tarPos = target.transform.position;
@@ -44,8 +57,11 @@ public class Unit : MonoBehaviour
             {
                 tarPos = transform.position;
 
+                anim.CrossFade("Attack");
+
                 if (Time.time - attT >= attSpeed)
                 {
+                    
                     attT = Time.time;
                     target.GetComponent<Stats>().health -= dmg;
                     
@@ -58,6 +74,7 @@ public class Unit : MonoBehaviour
             }
             else
             {
+
                 // Distance moved = time * speed.
                 float distCovered = (Time.time - t) * speed;
 
@@ -79,6 +96,8 @@ public class Unit : MonoBehaviour
         }
         else
         {
+            isMoving = true;
+            anim.CrossFade("Idle");
             // Distance moved = time * speed.
             float distCovered = (Time.time - t) * speed;
 
@@ -88,6 +107,8 @@ public class Unit : MonoBehaviour
             // Set our position as a fraction of the distance between the markers.
             if (this.transform.position != tarPos)
             {
+                isMoving = true;
+                anim.CrossFade("Walk");
                 oldPos = this.transform.position;
                 this.transform.position = Vector3.Lerp(pos, tarPos, fracJourney);
                 //this.transform.Translate(this.transform.position);
@@ -96,7 +117,10 @@ public class Unit : MonoBehaviour
             {
                 pos = tarPos;
             }
+            
         }
+
+
     }
 
     void OnMouseDown() {

@@ -364,6 +364,37 @@ Transform:
   m_Father: {fileID: 1480922377}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845505182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1476247141433102929, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
+    type: 3}
+  m_PrefabInstance: {fileID: 891302008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &845505183
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845505182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a3b42897c8469f4d8a594581440e508, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &845505188 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 1476247141433102931, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
+    type: 3}
+  m_PrefabInstance: {fileID: 891302008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &891302008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,6 +467,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1476247141433102931, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476247141433102931, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841051912822972180, guid: 8f4e89cf9eaeb0f42942fec360ffe60a,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 845505188}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4e89cf9eaeb0f42942fec360ffe60a, type: 3}
 --- !u!1001 &926672278
@@ -540,6 +586,8 @@ MonoBehaviour:
   attSpeed: 0
   speed: 1
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!136 &926672281
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1003,6 +1051,8 @@ MonoBehaviour:
   attSpeed: 0
   speed: 1
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!136 &1402117492
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1603,6 +1653,8 @@ MonoBehaviour:
   attSpeed: 2
   speed: 2
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!136 &2087690688
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2006,6 +2058,8 @@ MonoBehaviour:
   attSpeed: 0
   speed: 1
   target: {fileID: 0}
+  isMoving: 0
+  anim: {fileID: 0}
 --- !u!136 &4869202714374062569
 CapsuleCollider:
   m_ObjectHideFlags: 0
