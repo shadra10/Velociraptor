@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Resources/Velociraptor/Scene.unity
-  isLoaded: 1
-  isActive: 1
