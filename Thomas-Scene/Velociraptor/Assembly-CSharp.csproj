@@ -74,6 +74,8 @@
     <Compile Include="Assets\Resources\Scripts\CreateTower.cs" />
     <Compile Include="Assets\Resources\Scripts\CreateTurret.cs" />
     <Compile Include="Assets\Resources\Scripts\Fireburst.cs" />
+    <Compile Include="Assets\Resources\Scripts\Flock.cs" />
+    <Compile Include="Assets\Resources\Scripts\FlockLeader.cs" />
     <Compile Include="Assets\Resources\Scripts\Healthburst.cs" />
     <Compile Include="Assets\Resources\Scripts\HSplineMove.cs" />
     <Compile Include="Assets\Resources\Scripts\MainSelector.cs" />

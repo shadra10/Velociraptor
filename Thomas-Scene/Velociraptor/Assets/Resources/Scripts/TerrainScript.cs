@@ -23,6 +23,7 @@ public class TerrainScript : MonoBehaviour
 
     IEnumerator moveSet()
     {
+        Debug.Log("I'M IN MOVESET");
         Ray rayUsed = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane pUsed = new Plane(Vector3.up, transform.position);
         float distUsed = 0;

@@ -123,6 +123,7 @@ public class Unit : MonoBehaviour
 
     IEnumerator moveSet()
     {
+        Debug.Log("I'M HERE");
         GameObject objUsed = GameObject.FindWithTag("Selected");
         GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), objUsed.transform.position, objUsed.transform.rotation);
         GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), this.gameObject.transform.position, Quaternion.identity);
