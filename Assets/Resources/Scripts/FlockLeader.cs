@@ -10,11 +10,21 @@ public class FlockLeader : MonoBehaviour
     public float speed = 1.0F;
     float time;
     public bool isLeader;
+    int counter;
+    Vector3[] target;
     // Start is called before the first frame update
     void Start()
     {
         time = 0;
         speed = 12;
+        counter = 0;
+        //target = new Vector3(Random.Range(-20.0f, 20.0f), 0, Random.Range(-20.0f, 20.0f));
+        target = new Vector3[4];
+
+        target[0] = new Vector3(20, 0, 20);
+        target[1] = new Vector3(-30, 0, 20);
+        target[2] = new Vector3(-20, 0, -40);
+        target[3] = new Vector3(20, 0, -20);
         //Parent
     }
 
@@ -24,30 +34,68 @@ public class FlockLeader : MonoBehaviour
         time += Time.deltaTime;
         if (isLeader == true)
         {
-            transform.Rotate(0, 1, 0);
-
-            if (time % 2 < 1)
+            if (time < 10)
             {
-                //transform.Rotate(0, 0.5f, 0);
-                float angle = 0.25f;
-                Quaternion rot = this.transform.rotation;
-                rot = rot * Quaternion.Euler(0, angle, 0);
-                this.transform.rotation = rot;
-            }            //Transform trans;
-            else
-            {   
-                float angle = -2f;
-                Quaternion rot = this.transform.rotation;
-                rot = rot * Quaternion.Euler(0, angle, 0);
-                this.transform.rotation = rot;
-            }
-            Vector3 myvec = new Vector3(0, 0, speed * Time.deltaTime);
-            myvec = this.transform.rotation * myvec;
+                transform.Rotate(0, 1, 0);
 
-            Vector3 vec = this.transform.position;
-            Rigidbody body = this.GetComponent<Rigidbody>();
-            body.AddForce(myvec, ForceMode.Impulse);
-            //this.transform.position = vec;
+                if (time % 2 < 1)
+                {
+                    //transform.Rotate(0, 0.5f, 0);
+                    float angle = 0.25f;
+                    Quaternion rot = this.transform.rotation;
+                    rot = rot * Quaternion.Euler(0, angle, 0);
+                    this.transform.rotation = rot;
+                }            //Transform trans;
+                else
+                {
+                    float angle = -2f;
+                    Quaternion rot = this.transform.rotation;
+                    rot = rot * Quaternion.Euler(0, angle, 0);
+                    this.transform.rotation = rot;
+                }
+                Vector3 myvec = new Vector3(0, 0, speed * Time.deltaTime);
+                myvec = this.transform.rotation * myvec;
+
+                Vector3 vec = this.transform.position;
+                Rigidbody body = this.GetComponent<Rigidbody>();
+                body.AddForce(myvec, ForceMode.Impulse);
+                //this.transform.position = vec;
+            }
+            else
+            {
+
+
+                if ((this.transform.position - target[((int)time / 20) % 4]).magnitude > 10)
+                {
+                    Rigidbody body = GetComponent<Rigidbody>();
+                    Vector3 targetVector = target[((int)time / 20) % 4] - this.transform.position;
+                    Vector3 temp = new Vector3(0, 0, 1);
+                    temp = this.transform.rotation * temp;
+                    float angle = Vector3.SignedAngle(temp, targetVector, Vector3.up);
+                    if (angle > 2)
+                    {
+                        angle = 2;
+                    }
+                    else if (angle < -2)
+                    {
+                        angle = -2;
+                    }
+                    Quaternion rot = this.transform.rotation;
+                    rot = rot * Quaternion.Euler(0, angle, 0);
+                    this.transform.rotation = rot;
+
+                    Vector3 myvec = new Vector3(0, 0, speed * Time.deltaTime);
+                    myvec = this.transform.rotation * myvec;
+
+                    Vector3 vec = this.transform.position;
+
+                    body.AddForce(myvec, ForceMode.Impulse);
+                }
+
+
+
+
+            }
         }
         else
         {
@@ -56,8 +104,8 @@ public class FlockLeader : MonoBehaviour
             float count = 0;
             foreach (GameObject raptor in GetComponentInParent<Flock>().units)
             {
-                
-                if (raptor!=null&&(this.transform.position - raptor.transform.position).magnitude < 5)
+
+                if (raptor != null && (this.transform.position - raptor.transform.position).magnitude < 5)
                 {
                     Vector3 targetVector = raptor.transform.position - this.transform.position;
                     Vector3 temp = new Vector3(0, 0, 1);
@@ -67,17 +115,21 @@ public class FlockLeader : MonoBehaviour
                     count++;
                 }
             }
-            float average = total / count;
-            Quaternion rot2 = this.transform.rotation;
-            rot2 = rot2 * Quaternion.Euler(0, average+180, 0);
-            Vector3 space = new Vector3(0, 0, speed * Time.deltaTime);
-            space = rot2*space;
-            Rigidbody body = this.GetComponent<Rigidbody>();
+            float average;
+            Quaternion rot2;
+            Vector3 space;
+            Rigidbody body;
+            average = total / count;
+            rot2 = this.transform.rotation;
+            rot2 = rot2 * Quaternion.Euler(0, average + 180, 0);
+            space = new Vector3(0, 0, speed * Time.deltaTime);
+            space = rot2 * space;
+            body = this.GetComponent<Rigidbody>();
             body.AddForce(space, ForceMode.Impulse);
-            
 
-            
-            
+
+
+
             total = 0;
             count = 0;
             foreach (GameObject raptor in GetComponentInParent<Flock>().units)
@@ -97,16 +149,16 @@ public class FlockLeader : MonoBehaviour
             average = total / count;
             rot2 = this.transform.rotation;
             rot2 = rot2 * Quaternion.Euler(0, average, 0);
-            Vector3 space2 = new Vector3(0, 0, speed * Time.deltaTime);
-            space2 = rot2 * space2;
+            space = new Vector3(0, 0, speed * Time.deltaTime);
+            space = rot2 * space;
             body = this.GetComponent<Rigidbody>();
             if (average == double.NaN)
             {
                 Debug.Log("I'm here");
             }
-            body.AddForce(space2, ForceMode.Impulse);
+            body.AddForce(space, ForceMode.Impulse);
 
-            
+
             total = 0;
             count = 0;
             foreach (GameObject raptor in GetComponentInParent<Flock>().units)
@@ -149,29 +201,29 @@ public class FlockLeader : MonoBehaviour
     }
 
 }
-            /*
-            if ((this.transform.position - target.transform.position).magnitude > 10)
-            {
-                Vector3 targetVector = target.transform.position-this.transform.position;
-                Vector3 temp = new Vector3(0, 0, 1);
-                temp = this.transform.rotation*temp;
-                float angle = Vector3.SignedAngle(temp, targetVector,Vector3.up);
-                if (angle > 2)
-                {
-                    angle = 2;
-                }
-                else if (angle < -2)
-                {
-                    angle = -2;
-                }
-                Quaternion rot = this.transform.rotation;
-                rot = rot * Quaternion.Euler(0,angle,0);
-                this.transform.rotation = rot;
+/*
+if ((this.transform.position - target.transform.position).magnitude > 10)
+{
+    Vector3 targetVector = target.transform.position-this.transform.position;
+    Vector3 temp = new Vector3(0, 0, 1);
+    temp = this.transform.rotation*temp;
+    float angle = Vector3.SignedAngle(temp, targetVector,Vector3.up);
+    if (angle > 2)
+    {
+        angle = 2;
+    }
+    else if (angle < -2)
+    {
+        angle = -2;
+    }
+    Quaternion rot = this.transform.rotation;
+    rot = rot * Quaternion.Euler(0,angle,0);
+    this.transform.rotation = rot;
 
-                Vector3 myvec = new Vector3(0, 0, speed * Time.deltaTime);
-                myvec = this.transform.rotation * myvec;
+    Vector3 myvec = new Vector3(0, 0, speed * Time.deltaTime);
+    myvec = this.transform.rotation * myvec;
 
-                Vector3 vec = this.transform.position;
-                
-                body.AddForce(myvec, ForceMode.Impulse);
-            }*/
+    Vector3 vec = this.transform.position;
+
+    body.AddForce(myvec, ForceMode.Impulse);
+}*/

@@ -90,8 +90,8 @@ public class HSplineMove : MonoBehaviour
 
             this.transform.rotation = orient;
             this.GetComponent<Unit>().oldPos = this.transform.position;
-            
-            sInc += (0.05f / distUsed)*speed
+
+            sInc += (0.05f / distUsed) * speed;
             s = Mathf.SmoothStep(0, 1, sInc);
             yield return new WaitForSeconds(0.05f);
         }
