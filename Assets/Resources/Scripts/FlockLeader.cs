@@ -12,6 +12,9 @@ public class FlockLeader : MonoBehaviour
     public bool isLeader;
     int counter;
     Vector3[] target;
+    int counter2;
+    float targetAngle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,11 @@ public class FlockLeader : MonoBehaviour
         target[2] = new Vector3(-20, 0, -40);
         target[3] = new Vector3(20, 0, -20);
         //Parent
+        counter2 = 0;
+        targetAngle = Random.Range(-10, 10);
+        targetAngle = targetAngle / 10;
+        if (targetAngle < 0 && targetAngle > -0.4) targetAngle = -0.4f;
+        if (targetAngle > 0 && targetAngle < 0.4) targetAngle = 0.4f;
     }
 
     // Update is called once per frame
@@ -36,23 +44,20 @@ public class FlockLeader : MonoBehaviour
         {
             if (time < 10)
             {
-                transform.Rotate(0, 1, 0);
-
-                if (time % 4 < 2)
+                if ((int)time / 2 > counter2)
                 {
-                    //transform.Rotate(0, 0.5f, 0);
-                    float angle = 0.25f;
-                    Quaternion rot = this.transform.rotation;
-                    rot = rot * Quaternion.Euler(0, angle, 0);
-                    this.transform.rotation = rot;
-                }            //Transform trans;
-                else
-                {
-                    float angle = -2f;
-                    Quaternion rot = this.transform.rotation;
-                    rot = rot * Quaternion.Euler(0, angle, 0);
-                    this.transform.rotation = rot;
+                    targetAngle = Random.Range(-10, 10);
+                    targetAngle = targetAngle / 10;
+                    if (targetAngle < 0 && targetAngle > -0.4) targetAngle = -0.4f;
+                    if (targetAngle > 0 && targetAngle < 0.4) targetAngle = 0.4f;
+                    Debug.Log(targetAngle);
+                    counter2++;
                 }
+                //angle = angle/2;
+                Quaternion rot = this.transform.rotation;
+                rot = rot * Quaternion.Euler(0, targetAngle, 0);
+                this.transform.rotation = rot;
+
                 Vector3 myvec = new Vector3(0, 0, speed * Time.deltaTime);
                 myvec = this.transform.rotation * myvec;
 
