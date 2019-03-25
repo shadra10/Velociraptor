@@ -68,7 +68,9 @@ public class HSplineMove : MonoBehaviour
 
     IEnumerator Move()
     {
-        for (float s = 0.0f; s < 1.0f; s += (0.1f / distUsed)*speed)
+        float s = 0.0f;
+        float sInc = 0.0f;
+        while (s < 1.0f)
         {
             this.transform.position = HSplineInterp(spline, s);
             Vector3 curve_tan = HSplineInterp(spline, s + ((0.1f / distUsed) * speed)) - HSplineInterp(spline, s);
@@ -87,6 +89,10 @@ public class HSplineMove : MonoBehaviour
             orient *= Quaternion.AngleAxis(180, Vector3.up);
 
             this.transform.rotation = orient;
+            this.GetComponent<Unit>().oldPos = this.transform.position;
+            
+            sInc += (0.05f / distUsed)*speed
+            s = Mathf.SmoothStep(0, 1, sInc);
             yield return new WaitForSeconds(0.05f);
         }
         this.transform.position = spline.point[spline.point.Length - 1];
