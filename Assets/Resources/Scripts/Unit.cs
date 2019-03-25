@@ -34,6 +34,7 @@ public class Unit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.GetComponent<Stats>().health--;
         if (this.GetComponent<Stats>().health <= 0)
         {
             if (!deathTimer)

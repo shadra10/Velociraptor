@@ -43,7 +43,7 @@ public class Stats : MonoBehaviour
                 Camera.main.GetComponent<PlayerScript>().units -= 1;
             }
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         if (Time.time - 1.0F >= manaT && mana < manaMax)
