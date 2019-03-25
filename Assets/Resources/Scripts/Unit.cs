@@ -25,9 +25,12 @@ public class Unit : MonoBehaviour
         selector=GameObject.FindWithTag("mainselector");
         this.GetComponent<Stats>().health = this.GetComponent<Stats>().maxHealth;
         this.anim = GetComponent<Animation>();
-        foreach (AnimationState state in anim)
+        if (anim != null)
         {
-            state.speed = 0.5F;
+            foreach (AnimationState state in anim)
+            {
+                state.speed = 0.5F;
+            }
         }
     }
 
@@ -36,21 +39,32 @@ public class Unit : MonoBehaviour
     {
         if (this.GetComponent<Stats>().health <= 0)
         {
-            if (!deathTimer)
-            {
-                if (isMoving)
-                    anim.CrossFade("Move Die");
-                else
-                    anim.CrossFade("Stand Die");
+            if (gameObject.GetComponent<Animation>() != null) {
+                if (!deathTimer)
+                {
+                    if (isMoving)
+                        anim.CrossFade("Move Die");
+                    else
+                        anim.CrossFade("Stand Die");
 
-                deathTimer = true;
+                    deathTimer = true;
+                }
+                else
+                {
+                    if (!anim.IsPlaying("Move Die") && !anim.IsPlaying("Stand Die"))
+                    {
+                        if (GetComponent<Stats>().faction == 0)
+                        {
+                            Camera.main.GetComponent<PlayerScript>().units -= 1;
+                        }
+
+                        Destroy(gameObject);
+                    }
+                }
             }
             else
             {
-                if (!anim.IsPlaying("Move Die") && !anim.IsPlaying("Stand Die"))
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
         }
         else
@@ -95,11 +109,16 @@ public class Unit : MonoBehaviour
                 }
             } else if (this.GetComponent<HSplineMove>()) {
                 isMoving = true;
-                anim.CrossFade("Walk");
+                if (GetComponent<Animation>() != null) {
+                    anim.CrossFade("Walk");
+                }
             }
             else {
                 isMoving = false;
-                anim.CrossFade("Idle");
+                if (GetComponent<Animation>() != null)
+                {
+                    anim.CrossFade("Idle");
+                }
             }
         }
     }

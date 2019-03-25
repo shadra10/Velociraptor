@@ -38,12 +38,9 @@ public class Stats : MonoBehaviour
 
         if (health <= 0)
         {
-            if (faction == 0 && gameObject.GetComponent<Unit>())
-            {
-                Camera.main.GetComponent<PlayerScript>().units -= 1;
+            if (gameObject.GetComponent<Unit>() == null) {
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
         }
 
         if (Time.time - 1.0F >= manaT && mana < manaMax)
