@@ -21,6 +21,8 @@ public class Building : MonoBehaviour
     {
         if (this.GetComponent<Stats>().faction == 0)
         {
+            selector.GetComponent<MainSelector>().selected = this.gameObject;
+            selector.GetComponent<MainSelector>().resetButtons();
             GameObject oUsed = GameObject.FindWithTag("Selected");
 
             if (oUsed != null)

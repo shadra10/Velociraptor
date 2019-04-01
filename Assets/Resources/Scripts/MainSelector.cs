@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MainSelector : MonoBehaviour
 {
-    public GameObject buildings, eggHolder, MapAndUI;
+    public GameObject buildings, eggHolder, MapAndUI, selected;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,10 @@ public class MainSelector : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void resetButtons()
+    {
+
     }
 }
