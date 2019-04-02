@@ -11,19 +11,20 @@ public class Unit : MonoBehaviour
     public int dmg;
     public float t, attT;
     public float range, attSpeed;
-    public float speed = 2.0F;
+    public float speed = 7.0F;
     public GameObject target;
     GameObject selector;
     public bool deathTimer = false;
     public bool isMoving = false;
     public Animation anim;
-    public TerrainData terrain;
+    public Terrain terrain;
 
     void Start()
     {
         pos = tarPos = oldPos = this.transform.position;
         t = Time.time;
         selector=GameObject.FindWithTag("mainselector");
+        terrain = Terrain.activeTerrain;
         this.GetComponent<Stats>().health = this.GetComponent<Stats>().maxHealth;
         this.anim = GetComponent<Animation>();
         if (anim != null)
@@ -38,6 +39,7 @@ public class Unit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (this.GetComponent<Stats>().health <= 0)
         {
             if (gameObject.GetComponent<Animation>() != null) {
@@ -52,6 +54,7 @@ public class Unit : MonoBehaviour
                 }
                 else
                 {
+
                     if (!anim.IsPlaying("Move Die") && !anim.IsPlaying("Stand Die"))
                     {
                         if (GetComponent<Stats>().faction == 0)
@@ -70,6 +73,12 @@ public class Unit : MonoBehaviour
         }
         else
         {
+
+
+            Vector3 temp;
+            temp.x = this.transform.position.x;
+            temp.y = terrain.SampleHeight(this.transform.position) + 3;
+            temp.z = this.transform.position.z;
 
             if (target != null)
             {
@@ -113,6 +122,12 @@ public class Unit : MonoBehaviour
                 if (GetComponent<Animation>() != null) {
                     anim.CrossFade("Walk");
                 }
+
+                if (tarPos.x - pos.x > 0) temp.x += speed;
+                else if (tarPos.x - pos.x < 0) temp.x-=speed;
+                if (tarPos.z - pos.z > 0) temp.z += speed;
+                else if (tarPos.z - pos.z < 0) temp.z -= speed;
+
             }
             else {
                 isMoving = false;
@@ -121,9 +136,15 @@ public class Unit : MonoBehaviour
                     anim.CrossFade("Idle");
                 }
             }
+
+            Debug.Log(terrain.SampleHeight(this.transform.position));
+
+            this.transform.SetPositionAndRotation(temp, transform.rotation);
         }
 
-        pos.y = terrain.GetHeight((int)this.transform.position.x, (int)this.transform.position.z);
+
+
+        
     }
 
     void OnMouseDown() {
@@ -186,10 +207,16 @@ public class Unit : MonoBehaviour
     IEnumerator moveSet()
     {
 
+        
+
         Debug.Log("I'M HERE");
         GameObject objUsed = GameObject.FindWithTag("Selected");
-        GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), objUsed.transform.position, objUsed.transform.rotation);
-        GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), this.gameObject.transform.position, Quaternion.identity);
+
+        Vector3 tempp = objUsed.transform.position;
+        GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), tempp, objUsed.transform.rotation);
+        tempp = this.gameObject.transform.position;
+        tempp.y = objUsed.transform.position.y;
+        GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), tempp, Quaternion.identity);
 
         objUsed.GetComponent<Unit>().tarPos = this.gameObject.transform.position;
         objUsed.GetComponent<Unit>().t = Time.time;
@@ -206,8 +233,10 @@ public class Unit : MonoBehaviour
         objUsed.AddComponent(typeof(HSplineMove));
         objUsed.GetComponent<HSplineMove>().speed = objUsed.GetComponent<Unit>().speed;
         objUsed.GetComponent<HSplineMove>().path = new GameObject[2];
+
         objUsed.GetComponent<HSplineMove>().path[0] = tempStart;
         objUsed.GetComponent<HSplineMove>().path[1] = tempEnd;
+
 
         yield return null;
     }

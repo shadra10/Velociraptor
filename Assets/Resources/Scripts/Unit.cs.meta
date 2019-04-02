@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - target: {instanceID: 0}
   - anim: {instanceID: 0}
-  - terrain: {fileID: 15600000, guid: 39f916e4cee526849a2305bdbfb66053, type: 2}
+  - terrain: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

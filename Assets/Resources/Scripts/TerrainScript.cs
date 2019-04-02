@@ -31,11 +31,16 @@ public class TerrainScript : MonoBehaviour
         {
             Vector3 clickPos = rayUsed.GetPoint(distUsed);
             //Debug.Log(clickPos);
-            GameObject objUsed = GameObject.FindWithTag("Selected");
-            GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), objUsed.transform.position, objUsed.transform.rotation);
-            GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), clickPos, Quaternion.identity);
 
-            objUsed.GetComponent<Unit>().tarPos = clickPos;
+            GameObject objUsed = GameObject.FindWithTag("Selected");
+
+            Vector3 tempp = objUsed.transform.position;
+            GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), tempp, objUsed.transform.rotation);
+            tempp = clickPos;
+            tempp.y = objUsed.transform.position.y;
+            GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), tempp, Quaternion.identity);
+
+            objUsed.GetComponent<Unit>().tarPos = tempp;
             objUsed.GetComponent<Unit>().t = Time.time;
             objUsed.GetComponent<Unit>().pos = GameObject.FindWithTag("Selected").GetComponent<Unit>().transform.position;
             objUsed.GetComponent<Unit>().target = null;

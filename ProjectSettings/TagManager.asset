@@ -9,6 +9,7 @@ TagManager:
   - Foe
   - UI
   - mainselector
+  - Terrain
   layers:
   - Default
   - TransparentFX
