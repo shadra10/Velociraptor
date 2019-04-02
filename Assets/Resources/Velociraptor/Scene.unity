@@ -2747,6 +2747,12 @@ MonoBehaviour:
   buildings: {fileID: 1841452417}
   eggHolder: {fileID: 493271788}
   MapAndUI: {fileID: 1884065181}
+  selected: {fileID: 0}
+  buttons:
+  - {fileID: 722782366}
+  - {fileID: 535292296}
+  - {fileID: 529576165}
+  actions: []
 --- !u!1001 &1268738859
 PrefabInstance:
   m_ObjectHideFlags: 0

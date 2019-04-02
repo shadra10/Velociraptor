@@ -122,11 +122,25 @@ public class Unit : MonoBehaviour
             }
         }
     }
+    List<string> supplyWithActions()
+    {
+        List<string> output = new List<string>();
+        //GameObject me = this.GetComponent<GameObject>();
+        //Component comp =this.GetComponent<>
+        MonoBehaviour[] behave = GetComponents<MonoBehaviour>();
+        for (int i = 0; i < behave.Length; i++)
+        {
+            output.Add(behave[i].name);
+        }
+
+        return output;
+    }
 
     void OnMouseDown() {
         if (this.GetComponent<Stats>().faction == 0)
         {
             selector.GetComponent<MainSelector>().selected = this.gameObject;
+            selector.GetComponent<MainSelector>().actions = supplyWithActions();
             selector.GetComponent<MainSelector>().resetButtons();
 
             GameObject oUsed = GameObject.FindWithTag("Selected");
