@@ -11,12 +11,13 @@ public class Unit : MonoBehaviour
     public int dmg;
     public float t, attT;
     public float range, attSpeed;
-    public float speed = 1.0F;
+    public float speed = 2.0F;
     public GameObject target;
     GameObject selector;
     public bool deathTimer = false;
     public bool isMoving = false;
     public Animation anim;
+    public TerrainData terrain;
 
     void Start()
     {
@@ -121,6 +122,8 @@ public class Unit : MonoBehaviour
                 }
             }
         }
+
+        pos.y = terrain.GetHeight((int)this.transform.position.x, (int)this.transform.position.z);
     }
 
     void OnMouseDown() {
