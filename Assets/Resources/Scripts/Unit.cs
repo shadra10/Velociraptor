@@ -11,15 +11,18 @@ public class Unit : MonoBehaviour
     public int dmg;
     public float t, attT;
     public float range, attSpeed;
-    public float speed = 1.0F;
+    public float speed = 2.0F;
     public GameObject target;
     GameObject selector;
     public bool deathTimer = false;
     public bool isMoving = false;
     public Animation anim;
+    public TerrainData terrain;
+    public UnityEngine.AI.NavMeshAgent aUsed;
 
     void Start()
     {
+        aUsed = GetComponent<UnityEngine.AI.NavMeshAgent>();
         pos = tarPos = oldPos = this.transform.position;
         t = Time.time;
         selector=GameObject.FindWithTag("mainselector");
@@ -77,6 +80,10 @@ public class Unit : MonoBehaviour
                 if (tarPos != target.transform.position)
                 {
                     tarPos = target.transform.position;
+                    if (GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                    {
+                        GetComponent<UnityEngine.AI.NavMeshAgent>().destination = target.transform.position;
+                    }
 
                     t = Time.time;
                     pos = this.transform.position;
@@ -85,6 +92,11 @@ public class Unit : MonoBehaviour
                 if (Vector3.Distance(transform.position, tarPos) <= range)
                 {
                     tarPos = transform.position;
+                    if (GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                    {
+                        GetComponent<UnityEngine.AI.NavMeshAgent>().destination = transform.position;
+                    }
+
                     isMoving = false;
                     anim.CrossFade("Attack");
 
@@ -107,10 +119,20 @@ public class Unit : MonoBehaviour
                         }
                     }
                 }
-            } else if (this.GetComponent<HSplineMove>()) {
-                isMoving = true;
-                if (GetComponent<Animation>() != null) {
-                    anim.CrossFade("Walk");
+            } else if (this.GetComponent<UnityEngine.AI.NavMeshAgent>() != null){
+                if (this.GetComponent<UnityEngine.AI.NavMeshAgent>().velocity != new Vector3(0.0f, 0.0f, 0.0f)) {
+                    isMoving = true;
+                    if (GetComponent<Animation>() != null) {
+                        anim.CrossFade("Walk");
+                    }
+                }
+                else
+                {
+                    isMoving = false;
+                    if (GetComponent<Animation>() != null)
+                    {
+                        anim.CrossFade("Idle");
+                    }
                 }
             }
             else {
@@ -121,11 +143,19 @@ public class Unit : MonoBehaviour
                 }
             }
         }
+
+        if (terrain != null)
+        {
+            pos.y = terrain.GetHeight((int)this.transform.position.x, (int)this.transform.position.z);
+        }
     }
 
     void OnMouseDown() {
         if (this.GetComponent<Stats>().faction == 0)
         {
+            selector.GetComponent<MainSelector>().selected = this.gameObject;
+            selector.GetComponent<MainSelector>().resetButtons();
+
             GameObject oUsed = GameObject.FindWithTag("Selected");
 
             if (oUsed != null)
@@ -143,9 +173,13 @@ public class Unit : MonoBehaviour
 
             if (oUsed != null)
             {
-                StartCoroutine("moveSet");
+                oUsed.GetComponent<Unit>().target = this.gameObject;
+                oUsed.GetComponent<Unit>().tarPos = this.gameObject.transform.position;
 
-
+                if (oUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                {
+                    oUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = this.gameObject.transform.position;
+                }
             }
         }
 
@@ -157,52 +191,29 @@ public class Unit : MonoBehaviour
             {
                 if (oUsed != null)
                 {
-                    StartCoroutine("moveSet");
+                    oUsed.GetComponent<Unit>().target = this.gameObject;
+                    oUsed.GetComponent<Unit>().tarPos = this.gameObject.transform.position;
+
+                    if (oUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                    {
+                        oUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = this.gameObject.transform.position;
+                    }
                 }
             }
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        this.transform.position = oldPos;
-
-        tarPos = transform.position;
-
-        if (this.GetComponent<HSplineMove>() != null)
-        {
-            Destroy(this.GetComponent<HSplineMove>().path[0]);
-            Destroy(this.GetComponent<HSplineMove>().path[1]);
-            Destroy(this.GetComponent<HSplineMove>());
-        }
-    }
-
-    IEnumerator moveSet()
-    {
-
-        Debug.Log("I'M HERE");
-        GameObject objUsed = GameObject.FindWithTag("Selected");
-        GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), objUsed.transform.position, objUsed.transform.rotation);
-        GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), this.gameObject.transform.position, Quaternion.identity);
-
-        objUsed.GetComponent<Unit>().tarPos = this.gameObject.transform.position;
-        objUsed.GetComponent<Unit>().t = Time.time;
-        objUsed.GetComponent<Unit>().pos = GameObject.FindWithTag("Selected").GetComponent<Unit>().transform.position;
-        objUsed.GetComponent<Unit>().target = this.gameObject;
-
-        if (objUsed.GetComponent<HSplineMove>() != null)
-        {
-            Destroy(objUsed.GetComponent<HSplineMove>().path[0]);
-            Destroy(objUsed.GetComponent<HSplineMove>().path[1]);
-            Destroy(objUsed.GetComponent<HSplineMove>());
-            yield return new WaitForSeconds(0.05f);
-        }
-        objUsed.AddComponent(typeof(HSplineMove));
-        objUsed.GetComponent<HSplineMove>().speed = objUsed.GetComponent<Unit>().speed;
-        objUsed.GetComponent<HSplineMove>().path = new GameObject[2];
-        objUsed.GetComponent<HSplineMove>().path[0] = tempStart;
-        objUsed.GetComponent<HSplineMove>().path[1] = tempEnd;
-
-        yield return null;
-    }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    this.transform.position = oldPos;
+    //
+    //    tarPos = transform.position;
+    //
+    //    if (this.GetComponent<HSplineMove>() != null)
+    //    {
+    //        Destroy(this.GetComponent<HSplineMove>().path[0]);
+    //        Destroy(this.GetComponent<HSplineMove>().path[1]);
+    //        Destroy(this.GetComponent<HSplineMove>());
+    //    }
+    //}
 }

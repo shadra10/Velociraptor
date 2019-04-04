@@ -23,7 +23,7 @@ public class TerrainScript : MonoBehaviour
 
     IEnumerator moveSet()
     {
-        Debug.Log("I'M IN MOVESET");
+        /*Debug.Log("I'M IN MOVESET");
         Ray rayUsed = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane pUsed = new Plane(Vector3.up, transform.position);
         float distUsed = 0;
@@ -33,7 +33,7 @@ public class TerrainScript : MonoBehaviour
             //Debug.Log(clickPos);
             GameObject objUsed = GameObject.FindWithTag("Selected");
             GameObject tempStart = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), objUsed.transform.position, objUsed.transform.rotation);
-            GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), clickPos, Quaternion.identity);
+            GameObject tempEnd = Instantiate((GameObject)Resources.Load("Prefabs/Target", typeof(GameObject)), new Vector3(clickPos.x, objUsed.transform.position.y, clickPos.z), Quaternion.identity);
 
             objUsed.GetComponent<Unit>().tarPos = clickPos;
             objUsed.GetComponent<Unit>().t = Time.time;
@@ -55,6 +55,22 @@ public class TerrainScript : MonoBehaviour
 
             Debug.Log(GameObject.FindWithTag("Selected").GetComponent<Unit>().tarPos);
             Debug.Log(GameObject.FindWithTag("Selected").GetComponent<Unit>().pos);
+        }
+
+        yield return null;*/
+        RaycastHit hUsed;
+
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hUsed))
+        {
+            Debug.Log(hUsed.point);
+            GameObject objUsed = GameObject.FindWithTag("Selected");
+            objUsed.GetComponent<Unit>().target = null;
+            objUsed.GetComponent<Unit>().tarPos = hUsed.point;
+
+            if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+            {
+                objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = hUsed.point;
+            }
         }
 
         yield return null;
