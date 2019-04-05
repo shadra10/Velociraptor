@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 5791401361422182010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.46624637, y: 0.76525295, z: -9.177426}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5791401362593559240}
   - {fileID: 5791401362479221684}
@@ -324,7 +324,7 @@ MonoBehaviour:
   dmg: 6
   t: 0
   attT: 0
-  range: 10
+  range: 30
   attSpeed: 4
   speed: 1
   target: {fileID: 0}

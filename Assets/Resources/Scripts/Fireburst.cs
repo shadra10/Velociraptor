@@ -20,7 +20,7 @@ public class Fireburst : MonoBehaviour
                 gameObject.GetComponent<Stats>().health += 15;
                 gameObject.GetComponent<Stats>().mana -= 50;
 
-                Collider[] collArr = Physics.OverlapSphere(transform.position, 10.0F);
+                Collider[] collArr = Physics.OverlapSphere(transform.position, 30.0F);
 
                 foreach (Collider curColl in collArr)
                 {

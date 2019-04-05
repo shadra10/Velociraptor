@@ -341,7 +341,7 @@ MonoBehaviour:
   dmg: 5
   t: 0
   attT: 0
-  range: 5
+  range: 15
   attSpeed: 2
   speed: 2
   target: {fileID: 0}

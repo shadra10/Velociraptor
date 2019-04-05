@@ -19,7 +19,7 @@ public class CreateTurret : MonoBehaviour
         {
             if (Camera.main.GetComponent<PlayerScript>().units < Camera.main.GetComponent<PlayerScript>().unitsMax) {
                 if (Camera.main.GetComponent<PlayerScript>().eggs >= prefabUsed.GetComponent<Stats>().cost) {
-                    GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x + 2.0F, -0.349F, transform.position.z + 2.0F), Quaternion.identity);
+                    GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x + 2.0F, transform.position.y + 4.349F, transform.position.z + 2.0F), Quaternion.identity);
                     objUsed.AddComponent(typeof(CollisionChecker));
 
                     Camera.main.GetComponent<PlayerScript>().eggs -= prefabUsed.GetComponent<Stats>().cost;

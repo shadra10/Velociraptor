@@ -21,7 +21,7 @@ public class SpawnMiner : MonoBehaviour
             {
                 if (Camera.main.GetComponent<PlayerScript>().eggs >= prefabUsed.GetComponent<Stats>().cost)
                 {
-                    GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x + 2.0F, 0.05F, transform.position.z + 2.0F), Quaternion.identity);
+                    GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x + 6.0F, transform.position.y + 0.15F, transform.position.z + 6.0F), Quaternion.identity);
                     objUsed.AddComponent(typeof(CollisionChecker));
 
                     Camera.main.GetComponent<PlayerScript>().eggs -= prefabUsed.GetComponent<Stats>().cost;
