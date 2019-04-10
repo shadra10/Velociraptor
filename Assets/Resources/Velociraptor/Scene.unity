@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6066cf3db28d54479e6db7e03cc9abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 0}
+  myText: {fileID: 529576167}
 --- !u!1001 &534320968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2683,7 +2683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6066cf3db28d54479e6db7e03cc9abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 0}
+  myText: {fileID: 535292298}
 --- !u!4 &540976590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1407811305, guid: 83cdb3143d42ec242a1f7cf0fab1308a,
@@ -3389,7 +3389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6066cf3db28d54479e6db7e03cc9abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 0}
+  myText: {fileID: 722782368}
 --- !u!4 &788723782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7266398030564332133, guid: e4d13f150cbb79846b065c6dfbbc3ec7,
@@ -5125,9 +5125,9 @@ MonoBehaviour:
   MapAndUI: {fileID: 1884065181}
   selected: {fileID: 0}
   buttons:
-  - {fileID: 294465924}
-  - {fileID: 1561411072}
-  - {fileID: 1840376064}
+  - {fileID: 722782366}
+  - {fileID: 535292296}
+  - {fileID: 529576165}
   actions: []
 --- !u!4 &1263711631 stripped
 Transform:

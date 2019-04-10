@@ -54,11 +54,13 @@ public class Building : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("you clicked me!");
         if (this.GetComponent<Stats>().faction == 0)
         {
             selector.GetComponent<MainSelector>().selected = this.gameObject;
+            selector.GetComponent<MainSelector>().actions = supplyWithActions();
             selector.GetComponent<MainSelector>().resetButtons();
+
+
             GameObject[] oUsed = GameObject.FindGameObjectsWithTag("Selected");
 
             foreach (GameObject objUsed in oUsed)
