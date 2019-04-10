@@ -10,6 +10,7 @@ public class AI : MonoBehaviour
     public GameObject buildings;
     //public List<GameObject> targets;
     public List<GameObject> combatUnits=new List<GameObject>();
+    GameObject theTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,18 +32,62 @@ public class AI : MonoBehaviour
             objUsed.transform.parent = placeUnder.transform;
             Vector3 formup = new Vector3(-494f, 3f, 67.32f);
 
-            objUsed.GetComponent<Unit>().target = null;
-            objUsed.GetComponent<Unit>().tarPos = formup;
-
-            if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
-            {
-                objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = formup;
-
-            }
             combatUnits.Add(objUsed);
+            if (combatUnits.Count >= 5&&theTarget!=null)
+            {
+               
+                   
+                objUsed.GetComponent<Unit>().target = theTarget;
+                objUsed.GetComponent<Unit>().tarPos = theTarget.gameObject.transform.position;
+
+                if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                {
+                    objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = theTarget.gameObject.transform.position;
+                }
+            }
+            else
+            {
+                objUsed.GetComponent<Unit>().target = null;
+                objUsed.GetComponent<Unit>().tarPos = formup;
+
+                if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                {
+                    objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = formup;
+
+                }
+            }
+            
         }
 
         if (combatUnits.Count >= 5)
+        {
+            GameObject temptarget= findTarget();
+            if (theTarget != temptarget)
+            {
+                theTarget = temptarget;
+                for (int i = 0; i < combatUnits.Count; i++)
+                {
+                    if (combatUnits[i] == null)
+                    {
+                        combatUnits.RemoveAt(i);
+                        i--;
+                        continue;
+                    }
+
+                    //GameObject target = findTarget();
+                    if (theTarget == null)
+                        break;
+                    combatUnits[i].GetComponent<Unit>().target = theTarget;
+                    combatUnits[i].GetComponent<Unit>().tarPos = theTarget.gameObject.transform.position;
+
+                    if (combatUnits[i].GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                    {
+                        combatUnits[i].GetComponent<UnityEngine.AI.NavMeshAgent>().destination = theTarget.gameObject.transform.position;
+                    }
+                }
+            }
+        }
+        else
         {
             for (int i = 0; i < combatUnits.Count; i++)
             {
@@ -53,18 +98,18 @@ public class AI : MonoBehaviour
                     continue;
                 }
 
-                GameObject target = findTarget();
-                if (target == null)
-                    break;
-                combatUnits[i].GetComponent<Unit>().target = target;
-                combatUnits[i].GetComponent<Unit>().tarPos = target.gameObject.transform.position;
+                Vector3 formup = new Vector3(-494f, 3f, 67.32f);
+
+                combatUnits[i].GetComponent<Unit>().target = null;
+                combatUnits[i].GetComponent<Unit>().tarPos = formup;
 
                 if (combatUnits[i].GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
                 {
-                    combatUnits[i].GetComponent<UnityEngine.AI.NavMeshAgent>().destination = target.gameObject.transform.position;
+                    combatUnits[i].GetComponent<UnityEngine.AI.NavMeshAgent>().destination = formup;
                 }
             }
         }
+
     }
 
 
