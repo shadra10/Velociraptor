@@ -18,6 +18,7 @@ public class BaseAI : MonoBehaviour
         Collider[] collArr = Physics.OverlapSphere(transform.position, 30.0F);
         int foeList = 0;
         int allyList = 0;
+        int allyHealth = 0;
         GameObject tarFoe = null;
 
         foreach (Collider curColl in collArr)
@@ -48,11 +49,22 @@ public class BaseAI : MonoBehaviour
                 if (curObj.GetComponent<Stats>().faction == 1)
                 {
                     allyList++;
+                    allyHealth += (curObj.GetComponent<Stats>().maxHealth - curObj.GetComponent<Stats>().health);
                 }
             }
         }
 
-        if (foeList * 2 >= allyList)
+        if (foeList == 0)
+        {
+            mainFoe = null;
+            /*if (GetComponent<Unit>().target != null)
+            {
+                GetComponent<Unit>().target = null;
+                GetComponent<Unit>().tarPos = transform.position;
+                GetComponent<UnityEngine.AI.NavMeshAgent>().destination = transform.position;
+            }*/
+        }
+        else if (foeList * 2 >= allyList)
         {
             //Flee behaviour
         }

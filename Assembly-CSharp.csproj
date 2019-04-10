@@ -67,6 +67,7 @@
     <Compile Include="Assets\Resources\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\Resources\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
     <Compile Include="Assets\Resources\Scripts\BaseAI.cs" />
+    <Compile Include="Assets\Resources\Scripts\Bloodburst.cs" />
     <Compile Include="Assets\Resources\Scripts\Building.cs" />
     <Compile Include="Assets\Resources\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Resources\Scripts\CollisionChecker.cs" />
@@ -83,8 +84,10 @@
     <Compile Include="Assets\Resources\Scripts\HSplineMove.cs" />
     <Compile Include="Assets\Resources\Scripts\MainSelector.cs" />
     <Compile Include="Assets\Resources\Scripts\MinerAI.cs" />
+    <Compile Include="Assets\Resources\Scripts\NecroAI.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Resources\Scripts\SelectButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\Soulburst.cs" />
     <Compile Include="Assets\Resources\Scripts\SpawnMiner.cs" />
     <Compile Include="Assets\Resources\Scripts\SpawnSpitter.cs" />
     <Compile Include="Assets\Resources\Scripts\SpawnWarrior.cs" />

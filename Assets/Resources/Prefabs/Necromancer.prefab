@@ -120,6 +120,9 @@ GameObject:
   - component: {fileID: 1402117493}
   - component: {fileID: 1402117491}
   - component: {fileID: 934784257920285143}
+  - component: {fileID: 720277990768342380}
+  - component: {fileID: 4064066685902933804}
+  - component: {fileID: 1160277850162867220}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Foe
@@ -280,6 +283,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e96e45fc89484f40af30450bde48c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &720277990768342380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40cb131b693bc444a413535900022ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4064066685902933804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b556214478337d647aef1a1c2e33d619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1160277850162867220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89dd1f1b14bbf2948bf0619e08f9b863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6836373760477460015
