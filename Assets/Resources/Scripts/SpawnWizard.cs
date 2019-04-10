@@ -37,7 +37,7 @@ public class SpawnWizard : MonoBehaviour
         {
             if (Camera.main.GetComponent<PlayerScript>().eggs >= prefabUsed.GetComponent<Stats>().cost)
             {
-                GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 4.0F, 0.05F, transform.position.z + 10.0F), Quaternion.identity);
+                GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 0.0F, transform.position.y + 12.15F, transform.position.z + 15.0F), Quaternion.identity);
                 objUsed.AddComponent(typeof(CollisionChecker));
 
                 Camera.main.GetComponent<PlayerScript>().eggs -= prefabUsed.GetComponent<Stats>().cost;
