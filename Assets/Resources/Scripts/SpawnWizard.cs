@@ -30,4 +30,20 @@ public class SpawnWizard : MonoBehaviour
             }
         }
     }
+
+    public bool spawn()
+    {
+        if (Camera.main.GetComponent<PlayerScript>().units < Camera.main.GetComponent<PlayerScript>().unitsMax)
+        {
+            if (Camera.main.GetComponent<PlayerScript>().eggs >= prefabUsed.GetComponent<Stats>().cost)
+            {
+                GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 4.0F, 0.05F, transform.position.z + 10.0F), Quaternion.identity);
+                objUsed.AddComponent(typeof(CollisionChecker));
+
+                Camera.main.GetComponent<PlayerScript>().eggs -= prefabUsed.GetComponent<Stats>().cost;
+                Camera.main.GetComponent<PlayerScript>().units += 1;
+            }
+        }
+        return false;
+    }
 }

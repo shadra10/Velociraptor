@@ -31,7 +31,7 @@ public class SpawnSpitter : MonoBehaviour
         }
     }
 
-    bool spawn()
+    public bool spawn()
     {
         if (Camera.main.GetComponent<PlayerScript>().units < Camera.main.GetComponent<PlayerScript>().unitsMax)
         {

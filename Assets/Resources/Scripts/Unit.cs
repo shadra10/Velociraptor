@@ -159,6 +159,7 @@ public class Unit : MonoBehaviour
     void OnMouseDown() {
         if (this.GetComponent<Stats>().faction == 0)
         {
+            Debug.Log("you clicked me!");
             selector.GetComponent<MainSelector>().selected = this.gameObject;
             selector.GetComponent<MainSelector>().resetButtons();
 
