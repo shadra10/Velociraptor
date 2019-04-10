@@ -3713,11 +3713,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NecroKnight
       objectReference: {fileID: 0}
-    - target: {fileID: 2391331234401252173, guid: a1aa0a25cc435c742954d4e10bf44baa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 2391331234401742637, guid: a1aa0a25cc435c742954d4e10bf44baa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3773,93 +3768,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2391331234401742637, guid: a1aa0a25cc435c742954d4e10bf44baa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391331234401742637, guid: a1aa0a25cc435c742954d4e10bf44baa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391331234401742637, guid: a1aa0a25cc435c742954d4e10bf44baa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1aa0a25cc435c742954d4e10bf44baa, type: 3}
---- !u!1 &926672279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2391331234401252173, guid: a1aa0a25cc435c742954d4e10bf44baa,
-    type: 3}
-  m_PrefabInstance: {fileID: 926672278}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &926672280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926672279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 0
-  t: 0
-  attT: 0
-  range: 0
-  attSpeed: 0
-  speed: 1
-  target: {fileID: 0}
-  deathTimer: 0
-  isMoving: 0
-  anim: {fileID: 0}
-  terrain: {fileID: 0}
-  aUsed: {fileID: 0}
---- !u!136 &926672281
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926672279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &926672282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926672279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 45
-  maxHealth: 45
-  faction: 1
-  abilities: 0
-  mana: 30
-  manaMax: 30
-  cost: 0
-  type: 0
-  manaT: 0
-  collT: 0
-  collOccur: 0
 --- !u!4 &926672283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2391331234401742637, guid: a1aa0a25cc435c742954d4e10bf44baa,
@@ -6491,11 +6401,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
-    - target: {fileID: 6836373760477460013, guid: feabffbb3ef182a4292ed534bca72f43,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 6836373760477030989, guid: feabffbb3ef182a4292ed534bca72f43,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6551,93 +6456,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6836373760477030989, guid: feabffbb3ef182a4292ed534bca72f43,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836373760477030989, guid: feabffbb3ef182a4292ed534bca72f43,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836373760477030989, guid: feabffbb3ef182a4292ed534bca72f43,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feabffbb3ef182a4292ed534bca72f43, type: 3}
---- !u!1 &1402117490 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6836373760477460013, guid: feabffbb3ef182a4292ed534bca72f43,
-    type: 3}
-  m_PrefabInstance: {fileID: 1402117489}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1402117491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402117490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 0
-  t: 0
-  attT: 0
-  range: 0
-  attSpeed: 0
-  speed: 1
-  target: {fileID: 0}
-  deathTimer: 0
-  isMoving: 0
-  anim: {fileID: 0}
-  terrain: {fileID: 0}
-  aUsed: {fileID: 0}
---- !u!136 &1402117492
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402117490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &1402117493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402117490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 60
-  maxHealth: 60
-  faction: 1
-  abilities: 0
-  mana: 100
-  manaMax: 100
-  cost: 0
-  type: 0
-  manaT: 0
-  collT: 0
-  collOccur: 0
 --- !u!4 &1402117494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6836373760477030989, guid: feabffbb3ef182a4292ed534bca72f43,
@@ -6872,6 +6692,7 @@ GameObject:
   - component: {fileID: 1480922373}
   - component: {fileID: 1480922378}
   - component: {fileID: 1480922379}
+  - component: {fileID: 1480922380}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6982,6 +6803,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c690e63506f7a1b4c976d0d82341426f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eggs: 300
+  units: 4
+  unitsMax: 30
+  selectAll: 0
+--- !u!114 &1480922380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480922372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ec3e4a0d2acb44ebb9a33a83321bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eggs: 300
@@ -9634,11 +9471,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NecroSpitter
       objectReference: {fileID: 0}
-    - target: {fileID: 4258687838178125212, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 4258687838178125213, guid: 9c9e7a4e22742944b834dd7e0074136e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9694,98 +9526,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4258687838178125213, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4258687838178125213, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4258687838178125213, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6890594050469103937, guid: 9c9e7a4e22742944b834dd7e0074136e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9e7a4e22742944b834dd7e0074136e, type: 3}
---- !u!1 &2087690686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4258687838178125212, guid: 9c9e7a4e22742944b834dd7e0074136e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2087690685}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2087690687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087690686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 5
-  t: 0
-  attT: 0
-  range: 20
-  attSpeed: 2
-  speed: 2
-  target: {fileID: 0}
-  deathTimer: 0
-  isMoving: 0
-  anim: {fileID: 0}
-  terrain: {fileID: 0}
-  aUsed: {fileID: 0}
---- !u!136 &2087690688
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087690686}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &2087690689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087690686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 30
-  maxHealth: 30
-  faction: 1
-  abilities: 0
-  mana: 0
-  manaMax: 0
-  cost: 0
-  type: 0
-  manaT: 0
-  collT: 0
-  collOccur: 0
 --- !u!4 &2087690690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4258687838178125213, guid: 9c9e7a4e22742944b834dd7e0074136e,
@@ -12579,15 +12321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 7066415308516826622, guid: c9e36b2ba4a5d0547ac804532b17b468,
-        type: 3}
-      propertyPath: m_TagString
-      value: Foe
-      objectReference: {fileID: 0}
     - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -441.94
+      value: -449.66
       objectReference: {fileID: 0}
     - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
         type: 3}
@@ -12597,7 +12334,7 @@ PrefabInstance:
     - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 157.26761
+      value: 166.42
       objectReference: {fileID: 0}
     - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
         type: 3}
@@ -12639,93 +12376,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
+    - target: {fileID: 4869202714374062570, guid: c9e36b2ba4a5d0547ac804532b17b468,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e36b2ba4a5d0547ac804532b17b468, type: 3}
---- !u!1 &4869202714374062567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7066415308516826622, guid: c9e36b2ba4a5d0547ac804532b17b468,
-    type: 3}
-  m_PrefabInstance: {fileID: 4869202714374062566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4869202714374062568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869202714374062567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  tarPos: {x: 0, y: 0, z: 0}
-  dmg: 0
-  t: 0
-  attT: 0
-  range: 0
-  attSpeed: 0
-  speed: 1
-  target: {fileID: 0}
-  deathTimer: 0
-  isMoving: 0
-  anim: {fileID: 0}
-  terrain: {fileID: 0}
-  aUsed: {fileID: 0}
---- !u!136 &4869202714374062569
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869202714374062567}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.5, z: -0.2}
---- !u!114 &4869202714374062570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869202714374062567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 40
-  maxHealth: 40
-  faction: 1
-  abilities: 0
-  mana: 0
-  manaMax: 0
-  cost: 0
-  type: 0
-  manaT: 0
-  collT: 0
-  collOccur: 0
 --- !u!4 &4869202714374062571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7066415308516393374, guid: c9e36b2ba4a5d0547ac804532b17b468,

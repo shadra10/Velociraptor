@@ -890,6 +890,10 @@ GameObject:
   - component: {fileID: 7066415308511102028}
   - component: {fileID: 6517536248176746385}
   - component: {fileID: 8491412874932188310}
+  - component: {fileID: 4869202714374062569}
+  - component: {fileID: 4869202714374062570}
+  - component: {fileID: 4869202714374062568}
+  - component: {fileID: 6317719895803978689}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Foe
@@ -963,7 +967,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 60
@@ -975,3 +979,79 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &4869202714374062569
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066415308516826622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.5, z: -0.2}
+--- !u!114 &4869202714374062570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066415308516826622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40
+  maxHealth: 40
+  faction: 1
+  abilities: 0
+  mana: 0
+  manaMax: 0
+  cost: 15
+  type: 0
+  manaT: 0
+  collT: 0
+  collOccur: 0
+--- !u!114 &4869202714374062568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066415308516826622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  oldPos: {x: 0, y: 0, z: 0}
+  tarPos: {x: 0, y: 0, z: 0}
+  dmg: 2
+  t: 0
+  attT: 0
+  range: 6
+  attSpeed: 1
+  speed: 1
+  target: {fileID: 0}
+  deathTimer: 0
+  isMoving: 0
+  anim: {fileID: 0}
+  terrain: {fileID: 0}
+  aUsed: {fileID: 0}
+--- !u!114 &6317719895803978689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066415308516826622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e2d27fc53fe5f4d8dd0772d2c9b1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -829,6 +829,11 @@ GameObject:
   - component: {fileID: 4258687838178125214}
   - component: {fileID: 6247671021004091638}
   - component: {fileID: 7368544647829558533}
+  - component: {fileID: 2087690688}
+  - component: {fileID: 2087690687}
+  - component: {fileID: 2087690689}
+  - component: {fileID: 2087690691}
+  - component: {fileID: 3647825135770613869}
   m_Layer: 0
   m_Name: NecroSpitter
   m_TagString: Foe
@@ -901,7 +906,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 80
@@ -913,6 +918,109 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &2087690688
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258687838178125212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.5, z: -0.2}
+--- !u!114 &2087690687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258687838178125212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  oldPos: {x: 0, y: 0, z: 0}
+  tarPos: {x: 0, y: 0, z: 0}
+  dmg: 8
+  t: 0
+  attT: 0
+  range: 20
+  attSpeed: 2
+  speed: 1.5
+  target: {fileID: 0}
+  deathTimer: 0
+  isMoving: 0
+  anim: {fileID: 0}
+  terrain: {fileID: 0}
+  aUsed: {fileID: 0}
+--- !u!114 &2087690689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258687838178125212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  maxHealth: 30
+  faction: 1
+  abilities: 0
+  mana: 0
+  manaMax: 0
+  cost: 40
+  type: 0
+  manaT: 0
+  collT: 0
+  collOccur: 0
+--- !u!114 &2087690691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258687838178125212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  oldPos: {x: 0, y: 0, z: 0}
+  tarPos: {x: 0, y: 0, z: 0}
+  dmg: 5
+  t: 0
+  attT: 0
+  range: 15
+  attSpeed: 2
+  speed: 2
+  target: {fileID: 0}
+  deathTimer: 0
+  isMoving: 0
+  anim: {fileID: 0}
+  terrain: {fileID: 0}
+  aUsed: {fileID: 0}
+--- !u!114 &3647825135770613869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258687838178125212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e96e45fc89484f40af30450bde48c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6890594050469401953
 GameObject:
   m_ObjectHideFlags: 0

@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 3849036028123333600}
   - component: {fileID: 3849036028123333601}
   - component: {fileID: 744648155681097052}
+  - component: {fileID: 2150827899191410425}
   m_Layer: 0
   m_Name: MinerVelociraptor
   m_TagString: None
@@ -613,6 +614,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2150827899191410425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849036028123333606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e2d27fc53fe5f4d8dd0772d2c9b1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4142039308081129879
 GameObject:
   m_ObjectHideFlags: 0

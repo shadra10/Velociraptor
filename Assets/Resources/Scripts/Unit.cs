@@ -115,7 +115,13 @@ public class Unit : MonoBehaviour
                         if (gameObject.GetComponent<Stats>().type == 1 && target.GetComponent<Stats>().faction == 2)
                         {
                             target.GetComponent<Stats>().health -= (dmg * 4);
-                            Camera.main.GetComponent<PlayerScript>().eggs += (dmg * 5);
+                            if (gameObject.GetComponent<Stats>().faction == 0)
+                            {
+                                Camera.main.GetComponent<PlayerScript>().eggs += (dmg * 5);
+                            } else
+                            {
+                                Camera.main.GetComponent<EnemyScript>().eggs += (dmg * 5);
+                            }
                         }
                     }
                 }
