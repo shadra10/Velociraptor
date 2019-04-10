@@ -9,6 +9,7 @@ TagManager:
   - Foe
   - UI
   - mainselector
+  - SelectAll
   layers:
   - Default
   - TransparentFX

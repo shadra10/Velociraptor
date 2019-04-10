@@ -38,17 +38,15 @@ public class Turret : MonoBehaviour
             }
         }
 
-        /*GameObject[] objList = GameObject.FindGameObjectsWithTag("Foe");
+        /*GameObject[] objList = GameObject.FindGameObjectsWithTag("None");
 
         foreach (GameObject objUsed in objList)
         {
-            if (Vector3.Distance(transform.position, objUsed.transform.position) <= range)
+            if (objUsed.GetComponent<Unit>() != null)
             {
                 if (Time.time - attT >= attSpeed)
                 {
-                    attT = Time.time;
-                    objUsed.GetComponent<Stats>().health -= dmg;
-                    break;
+                    objUsed.gameObject.tag = "Selected";
                 }
             }
         }*/

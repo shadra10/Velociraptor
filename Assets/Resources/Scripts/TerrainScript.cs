@@ -63,13 +63,17 @@ public class TerrainScript : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hUsed))
         {
             Debug.Log(hUsed.point);
-            GameObject objUsed = GameObject.FindWithTag("Selected");
-            objUsed.GetComponent<Unit>().target = null;
-            objUsed.GetComponent<Unit>().tarPos = hUsed.point;
+            GameObject[] oUsed = GameObject.FindGameObjectsWithTag("Selected");
 
-            if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+            foreach (GameObject objUsed in oUsed)
             {
-                objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = hUsed.point;
+                objUsed.GetComponent<Unit>().target = null;
+                objUsed.GetComponent<Unit>().tarPos = hUsed.point;
+
+                if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                {
+                    objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = hUsed.point;
+                }
             }
         }
 

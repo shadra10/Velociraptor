@@ -100,7 +100,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 8
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 109763709}
   m_Layer: 5
   m_Name: Select all
-  m_TagString: Untagged
+  m_TagString: SelectAll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: {fileID: 21300000, guid: fe9d19c3afa6dc94ebc94c14e9eaceda, type: 3}
   notSelected: {fileID: 21300000, guid: 70c3349bf0f8ee94e9024562c497b070, type: 3}
+  myImage: {fileID: 0}
   controller: {fileID: 1480922372}
 --- !u!114 &109763710
 MonoBehaviour:
