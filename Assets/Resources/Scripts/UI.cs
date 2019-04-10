@@ -111,10 +111,18 @@ public class UI : MonoBehaviour
             Debug.LogError("Assign a Texture in the inspector.");
             return;
         }
-        float stretchX=Screen.height/600.0f;
+        float stretchX = Screen.height / 600.0f;
+        float myHeight = Screen.height;
+        float startY = myHeight * 0.75f;
+        float endY = (myHeight * 0.98f) - startY;
+
+        float myWidth = Screen.width;
+        float startX = myWidth * 0.01f;
+
+        float endX = (myWidth * 0.25f) - startX;
         float stretchY = Screen.width / 900.0f;
         //Debug.Log(stretchX+ ", "+ stretchY);
-        GUI.DrawTexture(new Rect(10*stretchX, 320*stretchY, 300*stretchX, 110*stretchY), texture, ScaleMode.StretchToFill, true, 10.0F);
+        GUI.DrawTexture(new Rect(startX, startY, endX, endY), texture, ScaleMode.StretchToFill, true, 10.0F);
 
         //GUI.DrawText(new Rect(10, 10, 60, 60), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
     }

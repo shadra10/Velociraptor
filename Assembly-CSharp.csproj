@@ -66,6 +66,7 @@
     <Compile Include="Assets\Resources\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
     <Compile Include="Assets\Resources\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\Resources\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
+    <Compile Include="Assets\Resources\Scripts\AI.cs" />
     <Compile Include="Assets\Resources\Scripts\BaseAI.cs" />
     <Compile Include="Assets\Resources\Scripts\Bloodburst.cs" />
     <Compile Include="Assets\Resources\Scripts\Building.cs" />
