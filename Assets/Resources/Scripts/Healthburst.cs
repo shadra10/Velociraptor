@@ -19,7 +19,7 @@ public class Healthburst : MonoBehaviour
             {
                 gameObject.GetComponent<Stats>().mana -= 35;
 
-                Collider[] collArr = Physics.OverlapSphere(transform.position, 10.0F);
+                Collider[] collArr = Physics.OverlapSphere(transform.position, 30.0F);
 
                 foreach (Collider curColl in collArr)
                 {

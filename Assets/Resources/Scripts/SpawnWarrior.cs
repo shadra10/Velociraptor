@@ -21,7 +21,7 @@ public class SpawnWarrior : MonoBehaviour
             {
                 if (Camera.main.GetComponent<PlayerScript>().eggs >= prefabUsed.GetComponent<Stats>().cost)
                 {
-                    GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 1.0F, 0.05F, transform.position.z + 8.0F), Quaternion.identity);
+                    GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 3.0F, transform.position.y + 12.15F, transform.position.z + 20.0F), Quaternion.identity);
                     objUsed.AddComponent(typeof(CollisionChecker));
 
                     Camera.main.GetComponent<PlayerScript>().eggs -= prefabUsed.GetComponent<Stats>().cost;
@@ -29,5 +29,21 @@ public class SpawnWarrior : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool spawn()
+    {
+        if (Camera.main.GetComponent<PlayerScript>().units < Camera.main.GetComponent<PlayerScript>().unitsMax)
+        {
+            if (Camera.main.GetComponent<PlayerScript>().eggs >= prefabUsed.GetComponent<Stats>().cost)
+            {
+                GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 3.0F, transform.position.y + 12.15F, transform.position.z + 20.0F), Quaternion.identity);
+                objUsed.AddComponent(typeof(CollisionChecker));
+
+                Camera.main.GetComponent<PlayerScript>().eggs -= prefabUsed.GetComponent<Stats>().cost;
+                Camera.main.GetComponent<PlayerScript>().units += 1;
+            }
+        }
+        return false;
     }
 }

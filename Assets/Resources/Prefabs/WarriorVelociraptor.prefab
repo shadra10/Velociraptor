@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 7549438054234759702}
   - component: {fileID: 737365149934127754}
   - component: {fileID: 5686859841811935757}
+  - component: {fileID: 5610512411236385882}
   m_Layer: 0
   m_Name: WarriorVelociraptor
   m_TagString: None
@@ -251,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 1476247141433102929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.46624637, y: 0.76525295, z: -9.177426}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1476247142490161055}
   - {fileID: 5094007996292207856}
@@ -313,7 +314,7 @@ MonoBehaviour:
   dmg: 5
   t: 0
   attT: 0
-  range: 2
+  range: 6
   attSpeed: 2
   speed: 2
   target: {fileID: 0}
@@ -383,6 +384,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5610512411236385882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476247141433102929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e96e45fc89484f40af30450bde48c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1476247141650018754
 GameObject:
   m_ObjectHideFlags: 0

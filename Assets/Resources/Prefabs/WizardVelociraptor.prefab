@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 7482364929341013678}
   - component: {fileID: 5658850588199782198}
   - component: {fileID: 6815530136456399456}
+  - component: {fileID: 6347029021705040485}
   m_Layer: 0
   m_Name: WizardVelociraptor
   m_TagString: None
@@ -253,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 5791401361422182010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.46624637, y: 0.76525295, z: -9.177426}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5791401362593559240}
   - {fileID: 5791401362479221684}
@@ -324,7 +325,7 @@ MonoBehaviour:
   dmg: 6
   t: 0
   attT: 0
-  range: 10
+  range: 30
   attSpeed: 4
   speed: 1
   target: {fileID: 0}
@@ -409,6 +410,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6347029021705040485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791401361422182010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e96e45fc89484f40af30450bde48c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5791401361572234729
 GameObject:
   m_ObjectHideFlags: 0

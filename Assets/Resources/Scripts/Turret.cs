@@ -15,19 +15,40 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] objList = GameObject.FindGameObjectsWithTag("Foe");
+        Collider[] collArr = Physics.OverlapSphere(transform.position, range);
 
-        foreach (GameObject objUsed in objList)
+        foreach (Collider curColl in collArr)
         {
-            if (Vector3.Distance(transform.position, objUsed.transform.position) <= range)
+            GameObject curObj = curColl.gameObject;
+
+            if (curObj.GetComponent<Stats>() != null)
             {
-                if (Time.time - attT >= attSpeed)
+
+                if (curObj.GetComponent<Stats>().faction != GetComponent<Stats>().faction && curObj.GetComponent<Stats>().faction != 2)
                 {
-                    attT = Time.time;
-                    objUsed.GetComponent<Stats>().health -= dmg;
-                    break;
+                    Debug.Log("El Stupido");
+
+                    if (Time.time - attT >= attSpeed)
+                    {
+                        attT = Time.time;
+                        curObj.GetComponent<Stats>().health -= dmg;
+                        break;
+                    }
                 }
             }
         }
+
+        /*GameObject[] objList = GameObject.FindGameObjectsWithTag("None");
+
+        foreach (GameObject objUsed in objList)
+        {
+            if (objUsed.GetComponent<Unit>() != null)
+            {
+                if (Time.time - attT >= attSpeed)
+                {
+                    objUsed.gameObject.tag = "Selected";
+                }
+            }
+        }*/
     }
 }

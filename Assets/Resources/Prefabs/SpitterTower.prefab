@@ -4021,6 +4021,7 @@ GameObject:
   - component: {fileID: 7974779814289624323}
   - component: {fileID: 2918242438359822936}
   - component: {fileID: 8430559796874289039}
+  - component: {fileID: 961054153575689612}
   m_Layer: 0
   m_Name: SpitterTower
   m_TagString: None
@@ -4037,7 +4038,7 @@ Transform:
   m_GameObject: {fileID: 2576136812947941641}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.614, y: 0.857, z: -6.139}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 6344947549784700468}
   - {fileID: 5975663879571813265}
@@ -4082,7 +4083,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!65 &5622546076483849794
 BoxCollider:
@@ -4123,7 +4124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 8
   attT: 0
-  range: 10
+  range: 30
   attSpeed: 2
 --- !u!114 &2918242438359822936
 MonoBehaviour:
@@ -4174,6 +4175,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &961054153575689612
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576136812947941641}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.65, y: 1, z: 0.65}
+  m_MoveThreshold: 0.2
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: -1.4, y: 1.4, z: 1.25}
+  m_TimeToStationary: 0.5
 --- !u!1 &2576136812947941645
 GameObject:
   m_ObjectHideFlags: 0

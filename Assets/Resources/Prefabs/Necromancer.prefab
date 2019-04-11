@@ -116,6 +116,13 @@ GameObject:
   - component: {fileID: 6836373760487436191}
   - component: {fileID: 6148477172431983663}
   - component: {fileID: 137290988683005994}
+  - component: {fileID: 1402117492}
+  - component: {fileID: 1402117493}
+  - component: {fileID: 1402117491}
+  - component: {fileID: 934784257920285143}
+  - component: {fileID: 720277990768342380}
+  - component: {fileID: 4064066685902933804}
+  - component: {fileID: 1160277850162867220}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Foe
@@ -132,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 6836373760477460013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.458, y: 0.513, z: -10.126466}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 6836373760477031021}
   - {fileID: 6836373760477031001}
@@ -190,10 +197,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 80
+  m_AngularSpeed: 60
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -202,6 +209,118 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1402117492
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.5, z: -0.2}
+--- !u!114 &1402117493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586db088e8cc11244a93242b8d0c2bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 60
+  maxHealth: 60
+  faction: 1
+  abilities: 0
+  mana: 100
+  manaMax: 100
+  cost: 60
+  type: 0
+  manaT: 0
+  collT: 0
+  collOccur: 0
+--- !u!114 &1402117491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d870a3e9b7e60140a6f2a8a6b2b7d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  oldPos: {x: 0, y: 0, z: 0}
+  tarPos: {x: 0, y: 0, z: 0}
+  dmg: 6
+  t: 0
+  attT: 0
+  range: 30
+  attSpeed: 4
+  speed: 1
+  target: {fileID: 0}
+  deathTimer: 0
+  isMoving: 0
+  anim: {fileID: 0}
+  terrain: {fileID: 0}
+  aUsed: {fileID: 0}
+--- !u!114 &934784257920285143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e96e45fc89484f40af30450bde48c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &720277990768342380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40cb131b693bc444a413535900022ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4064066685902933804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b556214478337d647aef1a1c2e33d619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1160277850162867220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836373760477460013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89dd1f1b14bbf2948bf0619e08f9b863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6836373760477460015
 GameObject:
   m_ObjectHideFlags: 0
