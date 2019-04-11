@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
     int count = 0;
     GameObject prefabUsed;
     public GameObject placeUnder;
+    public GameObject spawner;
     public GameObject buildings;
+
+    public Sprite win;
+    public Sprite lose;
+    public Image end;
     //public List<GameObject> targets;
     public List<GameObject> combatUnits=new List<GameObject>();
     GameObject theTarget;
@@ -21,18 +27,38 @@ public class AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float time = Time.time/10;
+        int time = (int)Time.time/10;
+
+        if (didLose())
+        {
+            end.sprite = lose;
+        }
+        if (didWin())
+        {
+            end.sprite = win;
+        }
 
         if (time > count)
         {
-            count++;
+            count=time;
+            if (combatUnits.Count < 6)
+            {
+                GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 3.0F, transform.position.y + 12.15F, transform.position.z + 20.0F), Quaternion.identity);
+                objUsed.AddComponent(typeof(CollisionChecker));
+                objUsed.transform.parent = placeUnder.transform;
+                Vector3 formup = new Vector3(-389f+ Random.Range(-10.0f, 10.0f), 7.5f, 58f+ Random.Range(-10.0f, 10.0f));
+                combatUnits.Add(objUsed);
+                objUsed.GetComponent<Unit>().target = null;
+                objUsed.GetComponent<Unit>().tarPos = formup;
 
-            GameObject objUsed = Instantiate(prefabUsed, new Vector3(transform.position.x - 3.0F, transform.position.y + 12.15F, transform.position.z + 20.0F), Quaternion.identity);
-            objUsed.AddComponent(typeof(CollisionChecker));
-            objUsed.transform.parent = placeUnder.transform;
-            Vector3 formup = new Vector3(-494f, 3f, 67.32f);
+                if (objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                {
+                    objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = formup;
 
-            combatUnits.Add(objUsed);
+                }
+            }
+
+            /*
             if (combatUnits.Count >= 5&&theTarget!=null)
             {
                
@@ -55,10 +81,10 @@ public class AI : MonoBehaviour
                     objUsed.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = formup;
 
                 }
-            }
+            }*/
             
         }
-
+        /*
         if (combatUnits.Count >= 5)
         {
             GameObject temptarget= findTarget();
@@ -98,7 +124,7 @@ public class AI : MonoBehaviour
                     continue;
                 }
 
-                Vector3 formup = new Vector3(-494f, 3f, 67.32f);
+                Vector3 formup = new Vector3(-406f, 7.5f, 64f);
 
                 combatUnits[i].GetComponent<Unit>().target = null;
                 combatUnits[i].GetComponent<Unit>().tarPos = formup;
@@ -108,20 +134,33 @@ public class AI : MonoBehaviour
                     combatUnits[i].GetComponent<UnityEngine.AI.NavMeshAgent>().destination = formup;
                 }
             }
-        }
+        }*/
 
     }
 
 
-    GameObject findTarget()
+    bool didLose()
     {
         foreach (Transform child in (buildings.transform))
         {
             if (child.GetComponent<Stats>().faction == 0)
             {
-                return child.gameObject;
+                return false;
             }
         }
-        return null;
+        return true;
     }
+
+    bool didWin()
+    {
+        foreach (Transform child in (buildings.transform))
+        {
+            if (child.GetComponent<Stats>().faction == 1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
