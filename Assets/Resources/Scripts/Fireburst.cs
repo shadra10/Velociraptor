@@ -20,6 +20,9 @@ public class Fireburst : MonoBehaviour
                 gameObject.GetComponent<Stats>().health += 15;
                 gameObject.GetComponent<Stats>().mana -= 50;
 
+                GameObject burst = (GameObject)Resources.Load("Prefabs/Fireburst", typeof(GameObject));
+                Instantiate(burst, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
                 Collider[] collArr = Physics.OverlapSphere(transform.position, 30.0F);
 
                 foreach (Collider curColl in collArr)

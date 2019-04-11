@@ -109,8 +109,39 @@ public class Unit : MonoBehaviour
 
                     if (Time.time - attT >= attSpeed)
                     {
+                        Vector3 deltaVec = target.transform.position - transform.position;
+                        Quaternion rotation = Quaternion.LookRotation(deltaVec);
+                        transform.rotation = rotation;
+
+
                         attT = Time.time;
-                        target.GetComponent<Stats>().health -= dmg;
+
+                        if (range < 10)
+                            target.GetComponent<Stats>().health -= dmg;
+                        else if(range < 25)
+                        {
+                            GameObject firebolto = (GameObject)Resources.Load("PyroParticles/Prefab/Prefab/Spit");
+                            Vector3 dir;
+
+                            dir = transform.position + (transform.forward * 5);
+
+                            dir.y += 1;
+
+                            Instantiate(firebolto, dir, this.transform.rotation);
+
+                        }
+                        else
+                        {
+                            GameObject firebolto = (GameObject)Resources.Load("PyroParticles/Prefab/Prefab/Firebolt");
+                            Vector3 dir;
+
+                            dir = transform.position + (transform.forward * 5);
+
+                            dir.y += 1;
+
+                            Instantiate(firebolto, dir, this.transform.rotation);
+
+                        }
 
                         if (gameObject.GetComponent<Stats>().type == 1 && target.GetComponent<Stats>().faction == 2)
                         {

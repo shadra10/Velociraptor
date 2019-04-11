@@ -22,6 +22,9 @@ public class Bloodburst : MonoBehaviour
         {
             gameObject.GetComponent<Stats>().mana -= 60;
 
+            GameObject burst = (GameObject)Resources.Load("Prefabs/Bloodburst", typeof(GameObject));
+            Instantiate(burst, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
             Collider[] collArr = Physics.OverlapSphere(transform.position, 10.0F);
 
             int totStolen = 0;

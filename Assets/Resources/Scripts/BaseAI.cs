@@ -64,10 +64,6 @@ public class BaseAI : MonoBehaviour
                 GetComponent<UnityEngine.AI.NavMeshAgent>().destination = transform.position;
             }
         }
-        else if (foeList * 2 >= allyList)
-        {
-            //Flee Behaviour
-        }
         else
         {
             if (tarFoe != mainFoe)

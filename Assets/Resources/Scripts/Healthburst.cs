@@ -19,6 +19,9 @@ public class Healthburst : MonoBehaviour
             {
                 gameObject.GetComponent<Stats>().mana -= 35;
 
+                GameObject burst = (GameObject)Resources.Load("Prefabs/HealBurst", typeof(GameObject));
+                Instantiate(burst, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
                 Collider[] collArr = Physics.OverlapSphere(transform.position, 30.0F);
 
                 foreach (Collider curColl in collArr)

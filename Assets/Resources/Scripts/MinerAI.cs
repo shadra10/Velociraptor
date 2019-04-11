@@ -102,10 +102,6 @@ public class MinerAI : MonoBehaviour
                 }
             }
         }
-        else if (foeList >= allyList)
-        {
-            //Flee behaviour
-        }
         else
         {
             if (tarFoe != mainFoe)

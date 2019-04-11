@@ -23,6 +23,9 @@ public class Soulburst : MonoBehaviour
             gameObject.GetComponent<Stats>().health += 10;
             gameObject.GetComponent<Stats>().mana -= 30;
 
+            GameObject burst = (GameObject)Resources.Load("Prefabs/Soulburst", typeof(GameObject));
+            Instantiate(burst, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
             Collider[] collArr = Physics.OverlapSphere(transform.position, 10.0F);
 
             foreach (Collider curColl in collArr)
